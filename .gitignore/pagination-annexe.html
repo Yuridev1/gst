@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pagination-annexe</title>
+</head>
+<body>
+<!-- mettre un lien vers ce fichier dans Url Pied de page -->
+<div style="text-align: right;">
+    Page <span id='page'></span> sur <span id='topage'></span>
+</div>
+<script> 
+var vars={};
+var x=window.location.search.substring(1).split('&');
+for (var i in x) {
+           var z=x[i].split('=',2);
+           vars[z[0]] = unescape(z[1]);
+}
+document.getElementById('page').innerHTML = (parseInt(vars.page) +1 ); 
+document.getElementById('topage').innerHTML = (parseInt(vars.topage) +1 ); 
+</script>             
+
+</body>
+</html>
